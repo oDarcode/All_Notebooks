@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="notes">Notes</string>
+    <string name="fill_all">Please fill all fields.</string>
+    <string name="successfully">"Saved successfully "</string>
+    <string name="remove_all">Removed everything</string>
+    <string name="update">Successfully updated</string>
+    <string name="remove">Successfully removed</string>
+    <string name="delete">Delete</string>
+    <string name="share">Share</string>
+    <string name="save">Save</string>
+    <string name="note">Note</string>
+    <string name="name_note">Name Note</string>
+    <string name="text_note">Text Note</string>
+    <string name="date">Date</string>
+    <string name="about">About</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="do_delete">Delete?</string>
+    <string name="are_you_sure">Are you sure?</string>
+    <string name="delete_everything">Delete everything?</string>
+    <string name="download">Download</string>
+    <string name="search">Search</string>
+    <string name="backup">Backup</string>
+    <string name="deleteAll">Delete all</string>
+</resources>

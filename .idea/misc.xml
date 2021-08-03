@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/darmi/AndroidStudioProjects/AllNotebooks/app/src/main/res/layout/activity_main.xml" value="0.371875" />
+        <entry key="..\:/Users/darmi/AndroidStudioProjects/AllNotebooks/task3/src/main/res/drawable/ic_launcher_foreground.xml" value="0.23229166666666667" />
+        <entry key="..\:/Users/darmi/AndroidStudioProjects/AllNotebooks/task3/src/main/res/layout/activity_about.xml" value="0.1405775075987842" />
+        <entry key="..\:/Users/darmi/AndroidStudioProjects/AllNotebooks/task3/src/main/res/layout/activity_main.xml" value="0.1405775075987842" />
+        <entry key="..\:/Users/darmi/AndroidStudioProjects/AllNotebooks/task3/src/main/res/layout/custom_row.xml" value="0.1" />
+        <entry key="..\:/Users/darmi/AndroidStudioProjects/AllNotebooks/task3/src/main/res/layout/fragment_add.xml" value="0.1405775075987842" />
+        <entry key="..\:/Users/darmi/AndroidStudioProjects/AllNotebooks/task3/src/main/res/layout/fragment_list.xml" value="0.1405775075987842" />
+        <entry key="..\:/Users/darmi/AndroidStudioProjects/AllNotebooks/task3/src/main/res/layout/fragment_show.xml" value="0.1405775075987842" />
+        <entry key="..\:/Users/darmi/AndroidStudioProjects/AllNotebooks/task3/src/main/res/menu/note_menu.xml" value="0.1" />
+        <entry key="..\:/Users/darmi/AndroidStudioProjects/AllNotebooks/task3/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.1484375" />
+        <entry key="..\:/Users/darmi/AndroidStudioProjects/AllNotebooks/task3/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.23229166666666667" />
+        <entry key="..\:/Users/darmi/AndroidStudioProjects/AllNotebooks/task4/src/main/res/drawable/ic_launcher_foreground.xml" value="0.2911458333333333" />
+        <entry key="..\:/Users/darmi/AndroidStudioProjects/AllNotebooks/task4/src/main/res/layout/activity_main.xml" value="0.11203703703703703" />
+        <entry key="..\:/Users/darmi/AndroidStudioProjects/AllNotebooks/task4/src/main/res/layout/custom_row.xml" value="0.11203703703703703" />
+        <entry key="..\:/Users/darmi/AndroidStudioProjects/AllNotebooks/task4/src/main/res/layout/fragment_add.xml" value="0.11203703703703703" />
+        <entry key="..\:/Users/darmi/AndroidStudioProjects/AllNotebooks/task4/src/main/res/layout/fragment_current.xml" value="0.11203703703703703" />
+        <entry key="..\:/Users/darmi/AndroidStudioProjects/AllNotebooks/task4/src/main/res/layout/fragment_list.xml" value="0.11203703703703703" />
+        <entry key="..\:/Users/darmi/AndroidStudioProjects/AllNotebooks/task4/src/main/res/layout/fragment_pager.xml" value="0.11203703703703703" />
+        <entry key="..\:/Users/darmi/AndroidStudioProjects/AllNotebooks/task4/src/main/res/menu/add_menu.xml" value="0.11203703703703703" />
+        <entry key="..\:/Users/darmi/AndroidStudioProjects/AllNotebooks/task4/src/main/res/menu/current_menu.xml" value="0.11203703703703703" />
+        <entry key="..\:/Users/darmi/AndroidStudioProjects/AllNotebooks/task4/src/main/res/menu/main_menu.xml" value="0.11203703703703703" />
+        <entry key="..\:/Users/darmi/AndroidStudioProjects/AllNotebooks/task4/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.25729166666666664" />
+        <entry key="..\:/Users/darmi/AndroidStudioProjects/AllNotebooks/task4/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.23229166666666667" />
+        <entry key="..\:/Users/darmi/AndroidStudioProjects/AllNotebooks/task5/src/main/res/drawable/ic_baseline_add_24.xml" value="0.12962962962962962" />
+        <entry key="..\:/Users/darmi/AndroidStudioProjects/AllNotebooks/task5/src/main/res/layout/activity_custom_html.xml" value="0.1" />
+        <entry key="..\:/Users/darmi/AndroidStudioProjects/AllNotebooks/task5/src/main/res/layout/activity_internet.xml" value="0.1" />
+        <entry key="..\:/Users/darmi/AndroidStudioProjects/AllNotebooks/task5/src/main/res/layout/activity_location.xml" value="0.1" />
+        <entry key="..\:/Users/darmi/AndroidStudioProjects/AllNotebooks/task5/src/main/res/layout/activity_main.xml" value="0.34057971014492755" />
+        <entry key="..\:/Users/darmi/AndroidStudioProjects/AllNotebooks/task5/src/main/res/layout/activity_view_pager.xml" value="0.265625" />
+        <entry key="..\:/Users/darmi/AndroidStudioProjects/AllNotebooks/task5/src/main/res/layout/custom_row.xml" value="0.1" />
+        <entry key="..\:/Users/darmi/AndroidStudioProjects/AllNotebooks/task5/src/main/res/layout/fragment_add.xml" value="0.265625" />
+        <entry key="..\:/Users/darmi/AndroidStudioProjects/AllNotebooks/task5/src/main/res/layout/fragment_current.xml" value="0.265625" />
+        <entry key="..\:/Users/darmi/AndroidStudioProjects/AllNotebooks/task5/src/main/res/layout/fragment_list.xml" value="0.265625" />
+        <entry key="..\:/Users/darmi/AndroidStudioProjects/AllNotebooks/task5/src/main/res/menu/add_menu.xml" value="0.1" />
+        <entry key="..\:/Users/darmi/AndroidStudioProjects/AllNotebooks/task5/src/main/res/menu/main_menu.xml" value="0.1" />
+        <entry key="..\:/Users/darmi/AndroidStudioProjects/AllNotebooks/task5/src/main/res/menu/view_pager_menu.xml" value="0.1" />
+        <entry key="..\:/Users/darmi/AndroidStudioProjects/AllNotebooks/task6/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.315625" />
+        <entry key="..\:/Users/darmi/AndroidStudioProjects/AllNotebooks/task6/src/main/res/layout/activity_custom_html.xml" value="0.2994791666666667" />
+        <entry key="..\:/Users/darmi/AndroidStudioProjects/AllNotebooks/task6/src/main/res/layout/activity_internet.xml" value="0.2994791666666667" />
+        <entry key="..\:/Users/darmi/AndroidStudioProjects/AllNotebooks/task6/src/main/res/layout/activity_location.xml" value="0.2994791666666667" />
+        <entry key="..\:/Users/darmi/AndroidStudioProjects/AllNotebooks/task6/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="..\:/Users/darmi/AndroidStudioProjects/AllNotebooks/task6/src/main/res/layout/activity_view_pager.xml" value="0.1" />
+        <entry key="..\:/Users/darmi/AndroidStudioProjects/AllNotebooks/task6/src/main/res/layout/custom_row.xml" value="0.2994791666666667" />
+        <entry key="..\:/Users/darmi/AndroidStudioProjects/AllNotebooks/task6/src/main/res/layout/fragment_add.xml" value="0.2994791666666667" />
+        <entry key="..\:/Users/darmi/AndroidStudioProjects/AllNotebooks/task6/src/main/res/layout/fragment_current.xml" value="0.2994791666666667" />
+        <entry key="..\:/Users/darmi/AndroidStudioProjects/AllNotebooks/task6/src/main/res/layout/fragment_list.xml" value="0.2994791666666667" />
+        <entry key="..\:/Users/darmi/AndroidStudioProjects/AllNotebooks/task6/src/main/res/menu/add_menu.xml" value="0.2994791666666667" />
+        <entry key="..\:/Users/darmi/AndroidStudioProjects/AllNotebooks/task6/src/main/res/menu/main_menu.xml" value="0.2994791666666667" />
+        <entry key="..\:/Users/darmi/AndroidStudioProjects/AllNotebooks/task6/src/main/res/menu/view_pager_menu.xml" value="0.2994791666666667" />
+        <entry key="..\:/Users/darmi/AndroidStudioProjects/AllNotebooks/task7/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.315625" />
+        <entry key="..\:/Users/darmi/AndroidStudioProjects/AllNotebooks/task7/src/main/res/drawable/ic_baseline_backup_24.xml" value="0.22037037037037038" />
+        <entry key="..\:/Users/darmi/AndroidStudioProjects/AllNotebooks/task7/src/main/res/drawable/ic_launcher_background.xml" value="0.3385416666666667" />
+        <entry key="..\:/Users/darmi/AndroidStudioProjects/AllNotebooks/task7/src/main/res/layout/activity_custom_html.xml" value="0.265625" />
+        <entry key="..\:/Users/darmi/AndroidStudioProjects/AllNotebooks/task7/src/main/res/layout/activity_internet.xml" value="0.3223958333333333" />
+        <entry key="..\:/Users/darmi/AndroidStudioProjects/AllNotebooks/task7/src/main/res/layout/activity_location.xml" value="0.3223958333333333" />
+        <entry key="..\:/Users/darmi/AndroidStudioProjects/AllNotebooks/task7/src/main/res/layout/activity_main.xml" value="0.3223958333333333" />
+        <entry key="..\:/Users/darmi/AndroidStudioProjects/AllNotebooks/task7/src/main/res/layout/activity_view_pager.xml" value="0.3223958333333333" />
+        <entry key="..\:/Users/darmi/AndroidStudioProjects/AllNotebooks/task7/src/main/res/layout/custom_row.xml" value="0.3223958333333333" />
+        <entry key="..\:/Users/darmi/AndroidStudioProjects/AllNotebooks/task7/src/main/res/layout/fragment_add.xml" value="0.3223958333333333" />
+        <entry key="..\:/Users/darmi/AndroidStudioProjects/AllNotebooks/task7/src/main/res/layout/fragment_current.xml" value="0.3223958333333333" />
+        <entry key="..\:/Users/darmi/AndroidStudioProjects/AllNotebooks/task7/src/main/res/layout/fragment_list.xml" value="0.3223958333333333" />
+        <entry key="..\:/Users/darmi/AndroidStudioProjects/AllNotebooks/task7/src/main/res/menu/main_menu.xml" value="0.20625" />
+        <entry key="..\:/Users/darmi/AndroidStudioProjects/AllNotebooks/task8/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.315625" />
+        <entry key="..\:/Users/darmi/AndroidStudioProjects/AllNotebooks/task8/src/main/res/drawable/ic_baseline_info_24.xml" value="0.225" />
+        <entry key="..\:/Users/darmi/AndroidStudioProjects/AllNotebooks/task8/src/main/res/layout/activity_custom_html.xml" value="0.265625" />
+        <entry key="..\:/Users/darmi/AndroidStudioProjects/AllNotebooks/task8/src/main/res/layout/activity_internet.xml" value="0.371875" />
+        <entry key="..\:/Users/darmi/AndroidStudioProjects/AllNotebooks/task8/src/main/res/layout/activity_location.xml" value="0.25" />
+        <entry key="..\:/Users/darmi/AndroidStudioProjects/AllNotebooks/task8/src/main/res/layout/activity_main.xml" value="0.29270833333333335" />
+        <entry key="..\:/Users/darmi/AndroidStudioProjects/AllNotebooks/task8/src/main/res/layout/activity_view_pager.xml" value="0.29270833333333335" />
+        <entry key="..\:/Users/darmi/AndroidStudioProjects/AllNotebooks/task8/src/main/res/layout/custom_row.xml" value="0.29270833333333335" />
+        <entry key="..\:/Users/darmi/AndroidStudioProjects/AllNotebooks/task8/src/main/res/layout/fragment_add.xml" value="0.265625" />
+        <entry key="..\:/Users/darmi/AndroidStudioProjects/AllNotebooks/task8/src/main/res/layout/fragment_current.xml" value="0.265625" />
+        <entry key="..\:/Users/darmi/AndroidStudioProjects/AllNotebooks/task8/src/main/res/layout/fragment_list.xml" value="0.29270833333333335" />
+        <entry key="..\:/Users/darmi/AndroidStudioProjects/AllNotebooks/task8/src/main/res/menu/add_menu.xml" value="0.29270833333333335" />
+        <entry key="..\:/Users/darmi/AndroidStudioProjects/AllNotebooks/task8/src/main/res/menu/main_menu.xml" value="0.1" />
+        <entry key="..\:/Users/darmi/AndroidStudioProjects/AllNotebooks/task8/src/main/res/menu/view_pager_menu.xml" value="0.29270833333333335" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

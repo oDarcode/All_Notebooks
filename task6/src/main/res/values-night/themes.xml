@@ -1,0 +1,38 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.AllNotebooks" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/night_primary</item>
+        <item name="colorPrimaryVariant">@color/night_primary_dark</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/night_primary</item>
+        <item name="colorSecondaryVariant">@color/night_primary_dark</item>
+        <item name="colorOnSecondary">@color/white</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
+        <!-- Customize your theme here. -->
+        <item name="android:colorBackground">@color/main_dark</item>
+
+    </style>
+
+    <style name = "textStyle" parent = "Theme.MaterialComponents.DayNight.NoActionBar" >
+        <item name="android:textColor">@color/light</item>
+        <item name="fontFamily">roboto_regular</item >
+        <item name = "android:fontFamily">roboto_regular</item>
+        <item name="android:textSize">18sp</item>
+
+        <item name="android:background">@color/night_primary_light</item>
+    </style>
+
+    <style name="dateStyle" parent = "Theme.MaterialComponents.DayNight.NoActionBar" >
+        <item name="android:textColor">@color/light</item>
+        <item name="fontFamily">roboto_regular</item >
+        <item name = "android:fontFamily">roboto_regular</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="groundColor" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="cardBackgroundColor">@color/night_primary_light</item>
+    </style>
+</resources>

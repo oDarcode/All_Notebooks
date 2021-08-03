@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="textStyle">
+        <item name="android:textColor">@color/dark</item>
+        <item name="fontFamily">roboto_regular</item>
+    </style>
+</resources>

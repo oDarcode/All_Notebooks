@@ -1,0 +1,29 @@
+<resources>
+    <string name="app_name" translatable="false">task7</string>
+
+    <string name="notes">Заметки</string>
+
+    <string name="successfully">Успешно сохранено</string>
+    <string name="remove_all">Все удалено</string>
+    <string name="update">Успешно обновлено</string>
+    <string name="remove">Успешно удалено</string>
+    <string name="delete">Удалить</string>
+    <string name="save">Сохранить</string>
+    <string name="name_note">Название заметки</string>
+    <string name="text_note">Текст заметки</string>
+    <string name="date">Дата</string>
+    <string name="yes">Да</string>
+    <string name="do_delete">Удалить?</string>
+    <string name="are_you_sure">Вы уверены?</string>
+    <string name="delete_everything">Удалить все?</string>
+    <string name="fill_all">Пожалуйста, заполните все поля</string>
+    <string name="share">Поделиться</string>
+    <string name="note">Заметка</string>
+    <string name="about">О программе</string>
+    <string name="no">Нет</string>
+    <string name="download">Скачать</string>
+    <string name="search">Поиск</string>
+    <string name="backup">Резервное копирование</string>
+    <string name="deleteAll">Удалить все</string>
+
+</resources>

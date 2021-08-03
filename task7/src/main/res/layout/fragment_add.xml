@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <import type="android.view.View"/>
+            <variable
+                name="addViewModel"
+                type="ru.dariamikhailukova.task7.mvvm.viewModel.add.AddViewModel" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context="mvvm.view.add.AddFragment">
+
+        <EditText
+            android:id="@+id/textNoteName"
+            style="@style/textStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+
+            android:ems="10"
+            android:hint="@string/name_note"
+            android:inputType="textMultiLine"
+            android:paddingStart="5dp"
+            android:paddingTop="8dp"
+            android:paddingEnd="5dp"
+            android:paddingBottom="8dp"
+            android:text="@={addViewModel.name}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:autofillHints="" />
+
+        <EditText
+            android:id="@+id/textNote"
+            style="@style/textStyle"
+            android:layout_width = "0dp"
+            android:layout_height = "0dp"
+            android:layout_marginStart = "8dp"
+            android:layout_marginTop = "8dp"
+            android:layout_marginEnd= "8dp"
+            android:layout_marginBottom= "16dp"
+            android:ems= "10"
+            android:gravity= "start|top"
+            android:inputType= "textMultiLine"
+            android:paddingStart= "5dp"
+            android:paddingTop= "8dp"
+            android:paddingEnd= "5dp"
+            android:paddingBottom= "8dp"
+            android:hint="@string/text_note"
+            android:text="@={addViewModel.text}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textNoteName"
+            android:autofillHints="" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

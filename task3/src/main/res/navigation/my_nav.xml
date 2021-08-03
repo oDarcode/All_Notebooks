@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:startDestination="@id/listFragment">
+
+    <fragment
+        android:id="@+id/listFragment"
+        android:name="ru.dariamikhailukova.task3.mvp.view.list.ListFragment"
+        android:label="task3">
+        <action
+            android:id="@+id/action_listFragment_to_showFragment"
+            app:destination="@id/showFragment" />
+        <action
+            android:id="@+id/action_listFragment_to_addFragment"
+            app:destination="@id/addFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/showFragment"
+        android:name="ru.dariamikhailukova.task3.mvp.view.show.ShowFragment"
+        android:label="Note">
+        <action
+            android:id="@+id/action_showFragment_to_listFragment"
+            app:destination="@id/listFragment" />
+        <argument
+            android:name="currentNote"
+            app:argType="ru.dariamikhailukova.task3.data.Note" />
+    </fragment>
+    <fragment
+        android:id="@+id/addFragment"
+        android:name="ru.dariamikhailukova.task3.mvp.view.add.AddFragment"
+        android:label="Add">
+        <action
+            android:id="@+id/action_addFragment_to_listFragment"
+            app:destination="@id/listFragment" />
+    </fragment>
+</navigation>

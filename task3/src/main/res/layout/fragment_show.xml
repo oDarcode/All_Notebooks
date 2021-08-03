@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".mvp.view.show.ShowFragment">
+
+    <EditText
+        android:id="@+id/updateTextNoteName"
+        android:layout_width="375dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="10dp"
+        android:ems="10"
+        android:hint="@string/input_name"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toTopOf="@+id/updateTextDate"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:autofillHints="" />
+
+    <EditText
+        android:id="@+id/updateTextNote"
+        android:layout_width="379dp"
+        android:layout_height="556dp"
+        android:ems="10"
+        android:gravity="start|top"
+        android:hint="@string/input_text"
+        android:inputType="textMultiLine"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/updateTextDate"
+        android:autofillHints="" />
+
+    <TextView
+        android:id="@+id/updateTextDate"
+        android:layout_width="377dp"
+        android:layout_height="30dp"
+        android:ems="10"
+        android:hint="@string/date"
+        android:textAlignment="viewEnd"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toTopOf="@+id/updateTextNote"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/updateTextNoteName" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

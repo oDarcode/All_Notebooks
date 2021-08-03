@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">task2</string>
+    <string name="empty_note">Пустая заметка</string>
+    <string name="saved">Сохранено</string>
+    <string name="save">Сохранить</string>
+    <string name="input_text">Введите текст</string>
+    <string name="input_name">Введите название</string>
+    <string name="about">О программе</string>
+    <string name="share">Поделиться</string>
+    <string name="about_info">Привет! Меня зовут Даша.\nЭто мое первое Android приложение.</string>
+</resources>
