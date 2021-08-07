@@ -11,7 +11,7 @@ import ru.dariamikhailukova.task8.mvvm.viewModel.list.ListViewModel
 import ru.dariamikhailukova.task8.mvvm.viewModel.viewPager.ViewPagerModel
 
 /**
- * Фабрика, которая создает view model для всех view приложения
+ * Фабрика, которая создает view model для каждой view приложения
  *
  * @param context контекст, для получения доступа к базе данных
  * @param type тип создаваемой view model

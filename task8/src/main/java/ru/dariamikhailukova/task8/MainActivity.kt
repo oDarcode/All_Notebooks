@@ -6,7 +6,11 @@ import androidx.navigation.NavController
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupActionBarWithNavController
+import androidx.work.Data
+import androidx.work.OneTimeWorkRequest
+import androidx.work.WorkManager
 import ru.dariamikhailukova.task8.databinding.ActivityMainBinding
+import ru.dariamikhailukova.task8.workManager.MyWorker
 
 /**
  * View класс для activity_main
@@ -31,4 +35,6 @@ class MainActivity : AppCompatActivity() {
         val navController = findNavController(R.id.fragment)
         return navController.navigateUp() || super.onSupportNavigateUp()
     }
+
+
 }

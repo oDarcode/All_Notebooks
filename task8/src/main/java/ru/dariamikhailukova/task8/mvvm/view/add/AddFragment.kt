@@ -21,8 +21,7 @@ import ru.dariamikhailukova.task8.retrofit.PostViewModelFactory
  */
 class AddFragment : Fragment(){
     private lateinit var binding: FragmentAddBinding
-    private lateinit var mAddViewModel:
-            AddViewModel
+    private lateinit var mAddViewModel: AddViewModel
     private lateinit var mPostViewModel: PostViewModel
 
     override fun onCreateView(
@@ -69,7 +68,7 @@ class AddFragment : Fragment(){
     /**
      * Функция, которая следит за нажатием кнопок меню
      *
-     * @param item возможные элементы меню
+     * @param item выбранный элемент меню
      */
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         if(item.itemId == R.id.menu_save){
@@ -90,8 +89,11 @@ class AddFragment : Fragment(){
         mPostViewModel.myResponse.observe(this, { response ->
             if(response.isSuccessful){
                 Log.d(TAG, "Response id " + response.body()?.id.toString())
-                mAddViewModel.name.value = response.body()?.title!!
-                mAddViewModel.text.value = response.body()?.body!!
+                binding.textNoteName.setText(response.body()?.title!!)
+                binding.textNote.setText(response.body()?.body!!)
+
+                //mAddViewModel.name.value = response.body()?.title!!
+                //mAddViewModel.text.value = response.body()?.body!!
             }else{
                 Log.d(TAG, "Error")
             }

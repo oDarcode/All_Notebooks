@@ -6,7 +6,9 @@ import android.os.Bundle
 import android.view.MenuItem
 import android.webkit.WebViewClient
 import ru.dariamikhailukova.task8.R
+
 import ru.dariamikhailukova.task8.databinding.ActivityInternetBinding
+
 
 /**
  * Класс для реализации работы WebView
@@ -40,13 +42,15 @@ class Internet : AppCompatActivity() {
 
     // Функция для настройки работы webView
     private fun webViewSetup() {
+
         binding.webView.apply {
-            loadUrl("https://www.google.ru/")
             settings.javaScriptEnabled = true
             settings.safeBrowsingEnabled = true
             settings.loadsImagesAutomatically = true
         }
 
         binding.webView.webViewClient = WebViewClient()
+        binding.webView.loadUrl("https://www.google.ru/")
+
     }
 }

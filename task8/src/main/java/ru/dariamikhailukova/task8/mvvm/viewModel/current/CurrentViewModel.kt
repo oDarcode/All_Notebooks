@@ -32,7 +32,6 @@ class CurrentViewModel(private val repository: NoteRepository): ViewModel() {
         text.value = note.text
         date.value = note.date
         dateStr.value = getDate()
-
     }
 
     /**

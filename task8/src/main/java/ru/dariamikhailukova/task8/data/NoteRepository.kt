@@ -8,6 +8,8 @@ import androidx.lifecycle.LiveData
  *
  * @param noteDao объект, который позволяет выполнять SQL – запросы к БД.
  *
+ * Передаем DAO вместо всей базы данных, потому что нам необходим доступ только к данному объекту
+ *
  */
 class NoteRepository(private val noteDao: NoteDao) {
     /**

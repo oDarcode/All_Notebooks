@@ -46,6 +46,16 @@ class CurrentFragment : Fragment(), CurrentView {
     }
 
     /**
+     * Заполнение вью информацией, содержащейся в заметке
+     */
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        arguments?.takeIf { it.containsKey(NOTE) }?.apply {
+            note = this.getParcelable(NOTE)!!
+            mCurrentViewModel.initAll(note)
+        }
+    }
+
+    /**
      * Функция, которая следит за изменением [mCurrentViewModel]
      */
     private fun subscribeToViewModel(){
@@ -64,25 +74,16 @@ class CurrentFragment : Fragment(), CurrentView {
         }
 
         mCurrentViewModel.onSendSuccess.observe(this){
+            val name = binding.nameEditText.text.toString()
+            val text = binding.textEditText.text.toString()
             val sendIntent: Intent = Intent().apply {
                 action = Intent.ACTION_SEND
-                putExtra(Intent.EXTRA_SUBJECT, mCurrentViewModel.name.value)
-                putExtra(Intent.EXTRA_TEXT, mCurrentViewModel.text.value)
+                putExtra(Intent.EXTRA_TEXT, "$name\n$text")
                 type = "text/plain"
             }
             startActivity(Intent.createChooser(sendIntent, ""))
         }
 
-    }
-
-    /**
-     * Заполнение вью информацией, содержащейся в заметке
-     */
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        arguments?.takeIf { it.containsKey(NOTE) }?.apply {
-            note = this.getParcelable(NOTE)!!
-            mCurrentViewModel.initAll(note)
-        }
     }
 
     /**
@@ -98,6 +99,7 @@ class CurrentFragment : Fragment(), CurrentView {
      * или это лучше делать через какое-то время??
      */
     override fun backup() {
+
         val myWorkRequest = OneTimeWorkRequest.Builder(MyWorker::class.java)
             .setInputData(mCurrentViewModel.doBackup())
             .build()

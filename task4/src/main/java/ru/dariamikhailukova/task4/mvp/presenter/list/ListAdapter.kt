@@ -1,6 +1,7 @@
 package ru.dariamikhailukova.task4.mvp.presenter.list
 
 import android.annotation.SuppressLint
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -60,8 +61,10 @@ class ListAdapter : RecyclerView.Adapter<ListAdapter.MyViewHolder>() {
         holder.eachItem?.setOnClickListener {
             //val action = ListFragmentDirections.actionListFragmentToShowFragment(currentItem)
             //пока что отключила
+            //Log.d("INSIDE", "heh")
             val action = ListFragmentDirections.actionListFragmentToViewPagerFragment(position)
             holder.itemView.findNavController().navigate(action)
+            //Log.d("INSIDE", "heh-heh-heh")
         }
 
     }

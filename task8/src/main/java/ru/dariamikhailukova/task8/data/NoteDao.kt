@@ -9,7 +9,7 @@ import androidx.room.*
 @Dao
 interface NoteDao {
 
-    @Insert(onConflict = OnConflictStrategy.IGNORE) //игнорировать если одинаковые
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun addNote(note: Note)
 
     @Update

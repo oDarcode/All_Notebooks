@@ -13,7 +13,9 @@
             app:destination="@id/addFragment" />
         <action
             android:id="@+id/action_listFragment_to_viewPagerFragment"
-            app:destination="@id/viewPagerFragment" />
+            app:destination="@id/viewPagerFragment"
+            app:launchSingleTop="false"
+            app:popUpToInclusive="false" />
     </fragment>
     <fragment
         android:id="@+id/addFragment"

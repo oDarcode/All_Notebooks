@@ -10,6 +10,10 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.work.Data
+import androidx.work.OneTimeWorkRequest
+import androidx.work.PeriodicWorkRequest
+import androidx.work.WorkManager
 import ru.dariamikhailukova.task8.factory.MyViewModelFactory
 import ru.dariamikhailukova.task8.factory.ViewModelTypes
 import ru.dariamikhailukova.task8.internet.CustomHtml
@@ -18,6 +22,8 @@ import ru.dariamikhailukova.task8.internet.Location
 import ru.dariamikhailukova.task8.R
 import ru.dariamikhailukova.task8.databinding.FragmentListBinding
 import ru.dariamikhailukova.task8.mvvm.viewModel.list.ListViewModel
+import ru.dariamikhailukova.task8.workManager.MyWorker
+import java.util.concurrent.TimeUnit
 
 /**
  * View класс для работы с fragment_list
@@ -53,6 +59,7 @@ class ListFragment : Fragment(), SearchView.OnQueryTextListener {
 
         return binding.root
     }
+
 
     /**
      * Функция, которая следит за изменением [mListViewModel]
