@@ -28,10 +28,10 @@ import java.util.concurrent.TimeUnit
 /**
  * View класс для работы с fragment_list
  */
-class ListFragment : Fragment(), SearchView.OnQueryTextListener {
+class ListFragment : Fragment(), ListView, SearchView.OnQueryTextListener {
     private lateinit var binding: FragmentListBinding
     private lateinit var mListViewModel: ListViewModel
-    private val adapter: ListAdapter by lazy { ListAdapter() }
+    private val mAdapter: ListAdapter by lazy { ListAdapter() }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -39,17 +39,18 @@ class ListFragment : Fragment(), SearchView.OnQueryTextListener {
     ): View {
         binding = FragmentListBinding.inflate(inflater, container, false)
 
-        val listViewModelFactory = MyViewModelFactory(requireContext(), ViewModelTypes.LIST)
+        val listViewModelFactory = MyViewModelFactory(ViewModelTypes.LIST)
         mListViewModel = ViewModelProvider(this, listViewModelFactory).get(ListViewModel::class.java)
 
         setHasOptionsMenu(true)
 
-
-        binding.recyclerView.adapter = adapter
-        binding.recyclerView.layoutManager = LinearLayoutManager(requireContext())
+        binding.recyclerView.apply {
+            adapter = mAdapter
+            layoutManager = LinearLayoutManager(requireContext())
+        }
 
         mListViewModel.readAllData.observe(viewLifecycleOwner, { note ->
-            adapter.setData(note)
+            mAdapter.setData(note)
         })
 
         binding.floatingActionButton.setOnClickListener {
@@ -64,7 +65,7 @@ class ListFragment : Fragment(), SearchView.OnQueryTextListener {
     /**
      * Функция, которая следит за изменением [mListViewModel]
      */
-    private fun subscribeToViewModel(){
+    override fun subscribeToViewModel(){
         mListViewModel.onAllDeleteSuccess.observe(this){
             Toast.makeText(requireContext(), R.string.remove_all, Toast.LENGTH_SHORT).show()
         }
@@ -76,6 +77,7 @@ class ListFragment : Fragment(), SearchView.OnQueryTextListener {
 
         val search = menu.findItem(R.id.menu_search)
         val searchView = search.actionView as? SearchView
+
         searchView?.isSubmitButtonEnabled = true
         searchView?.setOnQueryTextListener(this)
     }
@@ -106,16 +108,19 @@ class ListFragment : Fragment(), SearchView.OnQueryTextListener {
     /**
      * Функция, которая выводит диалоговое окно для удаления всех заметок
      */
-    private fun deleteAllNotes() {
+    override fun deleteAllNotes() {
         val builder = AlertDialog.Builder(requireContext())
         builder.setPositiveButton(R.string.yes){_,_->
             mListViewModel.deleteAllNotes()
         }
 
-        builder.setNegativeButton(R.string.no){_,_->}
-        builder.setTitle(getString(R.string.delete_everything))
-        builder.setMessage(R.string.are_you_sure)
-        builder.create().show()
+        builder.apply {
+            setNegativeButton(R.string.no){_,_->}
+            setTitle(getString(R.string.delete_everything))
+            setMessage(R.string.are_you_sure)
+            create().show()
+        }
+
     }
 
     override fun onQueryTextSubmit(query: String?): Boolean {
@@ -138,7 +143,7 @@ class ListFragment : Fragment(), SearchView.OnQueryTextListener {
 
         mListViewModel.searchDatabase(searchQuery).observe(this, { list ->
             list.let {
-                adapter.setData(it)
+                mAdapter.setData(it)
             }
         })
     }

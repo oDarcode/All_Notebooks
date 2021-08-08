@@ -12,7 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AllNotebooks">
         <activity
-            android:name=".mvvm.view.viewPager.ViewPager"
+            android:name=".mvvm.view.viewPager.ViewPagerFragment"
             android:label="@string/notes"
             android:exported="true" />
         <activity android:name=".MainActivity"

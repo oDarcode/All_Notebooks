@@ -18,7 +18,7 @@ import ru.dariamikhailukova.task7.mvvm.viewModel.list.ListViewModel
 /**
  * View класс для работы с fragment_list
  */
-class ListFragment : Fragment(), SearchView.OnQueryTextListener {
+class ListFragment : Fragment(), ListView, SearchView.OnQueryTextListener {
     private lateinit var binding: FragmentListBinding
     private lateinit var mListViewModel: ListViewModel
     private val adapter: ListAdapter by lazy { ListAdapter() }
@@ -29,7 +29,7 @@ class ListFragment : Fragment(), SearchView.OnQueryTextListener {
     ): View {
         binding = FragmentListBinding.inflate(inflater, container, false)
 
-        val listViewModelFactory = MyViewModelFactory(requireContext(), ViewModelTypes.LIST)
+        val listViewModelFactory = MyViewModelFactory(ViewModelTypes.LIST)
         mListViewModel = ViewModelProvider(this, listViewModelFactory).get(ListViewModel::class.java)
 
         setHasOptionsMenu(true)
@@ -53,7 +53,7 @@ class ListFragment : Fragment(), SearchView.OnQueryTextListener {
     /**
      * Функция, которая следит за изменением [mListViewModel]
      */
-    private fun subscribeToViewModel(){
+    override fun subscribeToViewModel(){
         mListViewModel.onAllDeleteSuccess.observe(this){
             Toast.makeText(requireContext(), R.string.remove_all, Toast.LENGTH_SHORT).show()
         }
@@ -80,16 +80,18 @@ class ListFragment : Fragment(), SearchView.OnQueryTextListener {
     /**
      * Функция, которая выводит диалоговое окно для удаления всех заметок
      */
-    private fun deleteAllNotes() {
+    override fun deleteAllNotes() {
         val builder = AlertDialog.Builder(requireContext())
         builder.setPositiveButton(R.string.yes){_,_->
             mListViewModel.deleteAllNotes()
         }
 
-        builder.setNegativeButton(R.string.no){_,_->}
-        builder.setTitle(getString(R.string.delete_everything))
-        builder.setMessage(R.string.are_you_sure)
-        builder.create().show()
+        builder.apply {
+            setNegativeButton(R.string.no){_,_->}
+            setTitle(getString(R.string.delete_everything))
+            setMessage(R.string.are_you_sure)
+            create().show()
+        }
     }
 
     override fun onQueryTextSubmit(query: String?): Boolean {

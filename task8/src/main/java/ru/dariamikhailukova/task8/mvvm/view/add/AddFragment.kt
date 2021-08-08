@@ -4,6 +4,8 @@ import android.os.Bundle
 import android.util.Log
 import android.view.*
 import android.widget.Toast
+import androidx.databinding.DataBindingComponent
+import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
@@ -19,7 +21,7 @@ import ru.dariamikhailukova.task8.retrofit.PostViewModelFactory
 /**
  * View класс для работы с fragment_add
  */
-class AddFragment : Fragment(){
+class AddFragment : Fragment(), AddView{
     private lateinit var binding: FragmentAddBinding
     private lateinit var mAddViewModel: AddViewModel
     private lateinit var mPostViewModel: PostViewModel
@@ -29,7 +31,7 @@ class AddFragment : Fragment(){
         savedInstanceState: Bundle?
     ): View {
         binding = FragmentAddBinding.inflate(inflater, container, false)
-        val addViewModelFactory = MyViewModelFactory(requireContext(), ViewModelTypes.ADD)
+        val addViewModelFactory = MyViewModelFactory(ViewModelTypes.ADD)
         mAddViewModel = ViewModelProvider(this, addViewModelFactory).get(AddViewModel::class.java)
         setHasOptionsMenu(true)
 
@@ -47,7 +49,7 @@ class AddFragment : Fragment(){
     /**
      * Функция, которая следит за изменением [mAddViewModel]
      */
-    private fun subscribeToViewModel(){
+    override fun subscribeToViewModel(){
         mAddViewModel.onAttemptSaveEmptyNote.observe(this){
             Toast.makeText(requireContext(), R.string.fill_all, Toast.LENGTH_SHORT).show()
         }
@@ -58,42 +60,31 @@ class AddFragment : Fragment(){
         }
     }
 
-    /**
-     * Функция для создания меню
-     */
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
         inflater.inflate(R.menu.add_menu, menu)
     }
 
-    /**
-     * Функция, которая следит за нажатием кнопок меню
-     *
-     * @param item выбранный элемент меню
-     */
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         if(item.itemId == R.id.menu_save){
             mAddViewModel.addNote()
         }
 
         if(item.itemId == R.id.menu_download){
-            getCurrentData()
+            getCurrentPost()
         }
         return super.onOptionsItemSelected(item)
     }
 
     /**
-     * Функция, которая получает заметку из сети
+     * Функция, которая получает пост из сети
      */
-    private fun getCurrentData(){
+    override fun getCurrentPost(){
         mPostViewModel.getPost()
         mPostViewModel.myResponse.observe(this, { response ->
             if(response.isSuccessful){
                 Log.d(TAG, "Response id " + response.body()?.id.toString())
                 binding.textNoteName.setText(response.body()?.title!!)
                 binding.textNote.setText(response.body()?.body!!)
-
-                //mAddViewModel.name.value = response.body()?.title!!
-                //mAddViewModel.text.value = response.body()?.body!!
             }else{
                 Log.d(TAG, "Error")
             }

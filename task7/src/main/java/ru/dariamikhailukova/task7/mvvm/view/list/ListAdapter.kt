@@ -10,8 +10,8 @@ import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.recyclerview.widget.RecyclerView
 import ru.dariamikhailukova.task7.R
 import ru.dariamikhailukova.task7.data.Note
-import ru.dariamikhailukova.task7.mvvm.view.viewPager.ViewPager
-import ru.dariamikhailukova.task7.mvvm.view.viewPager.ViewPager.Companion.NUMBER
+import ru.dariamikhailukova.task7.mvvm.view.viewPager.ViewPagerFragment
+import ru.dariamikhailukova.task7.mvvm.view.viewPager.ViewPagerFragment.Companion.NUMBER
 
 /**
  * Класс адаптер для Recycler view
@@ -59,7 +59,7 @@ class ListAdapter : RecyclerView.Adapter<ListAdapter.MyViewHolder>() {
         holder.name?.text = currentItem.name
 
         holder.eachItem?.setOnClickListener {
-            val intent = Intent(holder.itemView.context, ViewPager::class.java)
+            val intent = Intent(holder.itemView.context, ViewPagerFragment::class.java)
             intent.putExtra(NUMBER, currentItem.id)
             holder.itemView.context.startActivity(intent)
         }

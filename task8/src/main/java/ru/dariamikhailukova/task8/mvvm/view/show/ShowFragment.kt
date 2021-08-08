@@ -1,4 +1,4 @@
-package ru.dariamikhailukova.task8.mvvm.view.current
+package ru.dariamikhailukova.task8.mvvm.view.show
 
 import android.app.AlertDialog
 import android.content.Intent
@@ -13,31 +13,31 @@ import androidx.work.OneTimeWorkRequest
 import androidx.work.WorkManager
 import ru.dariamikhailukova.task8.factory.MyViewModelFactory
 import ru.dariamikhailukova.task8.factory.ViewModelTypes
-import ru.dariamikhailukova.task8.mvvm.viewModel.current.CurrentViewModel
+import ru.dariamikhailukova.task8.mvvm.viewModel.show.ShowViewModel
 import ru.dariamikhailukova.task8.workManager.MyWorker
 import ru.dariamikhailukova.task8.R
 import ru.dariamikhailukova.task8.data.Note
-import ru.dariamikhailukova.task8.databinding.FragmentCurrentBinding
+import ru.dariamikhailukova.task8.databinding.FragmentShowBinding
 
 /**
  * View класс для работы с fragment_show
  */
-class CurrentFragment : Fragment(), CurrentView {
-    private lateinit var binding: FragmentCurrentBinding
-    private lateinit var mCurrentViewModel: CurrentViewModel
+class ShowFragment : Fragment(), ShowView {
+    private lateinit var binding: FragmentShowBinding
+    private lateinit var mShowViewModel: ShowViewModel
 
-    lateinit var note: Note
+    private lateinit var note: Note
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        binding = FragmentCurrentBinding.inflate(inflater, container, false)
+        binding = FragmentShowBinding.inflate(inflater, container, false)
 
-        val currentViewModelFactory = MyViewModelFactory(requireContext(), ViewModelTypes.CURRENT)
-        mCurrentViewModel = ViewModelProvider(this, currentViewModelFactory).get(CurrentViewModel::class.java)
+        val currentViewModelFactory = MyViewModelFactory(ViewModelTypes.CURRENT)
+        mShowViewModel = ViewModelProvider(this, currentViewModelFactory).get(ShowViewModel::class.java)
 
-        binding.currentViewModel = mCurrentViewModel
+        binding.showViewModel = mShowViewModel
         binding.lifecycleOwner = this
 
         subscribeToViewModel()
@@ -51,57 +51,46 @@ class CurrentFragment : Fragment(), CurrentView {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         arguments?.takeIf { it.containsKey(NOTE) }?.apply {
             note = this.getParcelable(NOTE)!!
-            mCurrentViewModel.initAll(note)
+            mShowViewModel.initAll(note)
         }
     }
 
     /**
-     * Функция, которая следит за изменением [mCurrentViewModel]
+     * Функция, которая следит за изменением [mShowViewModel]
      */
-    private fun subscribeToViewModel(){
-        mCurrentViewModel.onAttemptSaveEmptyNote.observe(this){
+    override fun subscribeToViewModel(){
+        mShowViewModel.onAttemptSaveEmptyNote.observe(this){
             Toast.makeText(requireContext(), R.string.fill_all, Toast.LENGTH_SHORT).show()
         }
 
-        mCurrentViewModel.onDeleteSuccess.observe(this){
+        mShowViewModel.onDeleteSuccess.observe(this){
             activity?.onBackPressed()
             Toast.makeText(requireContext(), R.string.remove, Toast.LENGTH_SHORT).show()
         }
 
-        mCurrentViewModel.onUpdateSuccess.observe(this){
+        mShowViewModel.onUpdateSuccess.observe(this){
             activity?.onBackPressed()
             Toast.makeText(requireContext(), R.string.update, Toast.LENGTH_SHORT).show()
         }
 
-        mCurrentViewModel.onSendSuccess.observe(this){
-            val name = binding.nameEditText.text.toString()
-            val text = binding.textEditText.text.toString()
-            val sendIntent: Intent = Intent().apply {
-                action = Intent.ACTION_SEND
-                putExtra(Intent.EXTRA_TEXT, "$name\n$text")
-                type = "text/plain"
-            }
-            startActivity(Intent.createChooser(sendIntent, ""))
+        mShowViewModel.onSendSuccess.observe(this){
+            sendIntent()
         }
-
     }
 
     /**
      * Функция, для сохранения полей открытой заметки в бд
      */
     override fun updateItem() {
-        mCurrentViewModel.updateNote()
+        mShowViewModel.updateNote()
     }
 
     /**
      * Функция, которая производит резервное копирование заметки
-     *
-     * или это лучше делать через какое-то время??
      */
     override fun backup() {
-
         val myWorkRequest = OneTimeWorkRequest.Builder(MyWorker::class.java)
-            .setInputData(mCurrentViewModel.doBackup())
+            .setInputData(mShowViewModel.doBackup())
             .build()
 
         WorkManager
@@ -115,22 +104,38 @@ class CurrentFragment : Fragment(), CurrentView {
     override fun deleteNote() {
         val builder = AlertDialog.Builder(requireContext())
         builder.setPositiveButton(getString(R.string.yes)){ _, _->
-            mCurrentViewModel.deleteNote()
+            mShowViewModel.deleteNote()
         }
 
-        builder.setNegativeButton(getString(R.string.no)){ _, _->}
-        builder.setTitle(getString(R.string.do_delete))
-        builder.setMessage(getString(R.string.are_you_sure))
-        builder.create().show()
+        builder.apply {
+            setNegativeButton(getString(R.string.no)){ _, _->}
+            setTitle(getString(R.string.do_delete))
+            setMessage(getString(R.string.are_you_sure))
+            create().show()
+        }
     }
 
     /**
      * Функция для отправки заметки во внешнее приложение
      */
     override fun sendEmail() {
-        mCurrentViewModel.sendNote()
+        mShowViewModel.sendNote()
     }
 
+
+    /**
+     * Функция вызова интента - отправка текста во внешнее приложение
+     */
+    override fun sendIntent(){
+        val name = binding.nameEditText.text.toString()
+        val text = binding.textEditText.text.toString()
+        val sendIntent: Intent = Intent().apply {
+            action = Intent.ACTION_SEND
+            putExtra(Intent.EXTRA_TEXT, "$name\n$text")
+            type = "text/plain"
+        }
+        startActivity(Intent.createChooser(sendIntent, ""))
+    }
 
     companion object{
         const val NOTE = "Note"

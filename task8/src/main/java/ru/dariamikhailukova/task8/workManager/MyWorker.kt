@@ -17,6 +17,12 @@ class MyWorker(context: Context, workerParams: WorkerParameters) : Worker(contex
     override fun doWork(): Result {
         Log.d(TAG, "doWork: start")
 
+        try {
+            TimeUnit.SECONDS.sleep(3)
+        } catch (e: InterruptedException) {
+            e.printStackTrace()
+        }
+
         val name = inputData.getString("name")
         val text = inputData.getString("text")
 

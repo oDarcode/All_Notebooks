@@ -1,4 +1,4 @@
-package ru.dariamikhailukova.task7.mvvm.viewModel.current
+package ru.dariamikhailukova.task7.mvvm.viewModel.show
 
 import android.util.Log
 import androidx.lifecycle.*
@@ -17,7 +17,7 @@ import java.util.*
  *
  * @property repository абстракция через которую осуществляется доступ к базе данных
  */
-class CurrentViewModel(private val repository: NoteRepository): ViewModel() {
+class ShowViewModel(private val repository: NoteRepository): ViewModel() {
 
     var id = MutableLiveData<Long>()
     var name = MutableLiveData<String>()
@@ -32,7 +32,6 @@ class CurrentViewModel(private val repository: NoteRepository): ViewModel() {
         text.value = note.text
         date.value = note.date
         dateStr.value = getDate()
-
     }
 
     /**

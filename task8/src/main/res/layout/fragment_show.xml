@@ -6,14 +6,14 @@
     <data>
         <import type="android.view.View"/>
         <variable
-            name="currentViewModel"
-            type="ru.dariamikhailukova.task7.mvvm.viewModel.current.CurrentViewModel" />
+            name="showViewModel"
+            type="ru.dariamikhailukova.task8.mvvm.viewModel.show.ShowViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".mvvm.view.current.CurrentFragment">
+        tools:context=".mvvm.view.show.ShowFragment">
 
         <EditText
             android:id="@+id/nameEditText"
@@ -30,11 +30,11 @@
             android:paddingTop="8dp"
             android:paddingEnd="5dp"
             android:paddingBottom="8dp"
-            android:text="@={currentViewModel.name}"
+            android:text="@={showViewModel.name}"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            android:autofillHints="" />
+            android:autofillHints="Homework" />
 
 
         <EditText
@@ -53,12 +53,12 @@
             android:paddingTop="8dp"
             android:paddingEnd="5dp"
             android:paddingBottom="8dp"
-            android:text="@={currentViewModel.text}"
+            android:text="@={showViewModel.text}"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/dateTextView"
-            android:autofillHints="" />
+            android:autofillHints="Don't do my homework." />
 
         <TextView
             android:id="@+id/dateTextView"
@@ -71,7 +71,7 @@
             android:hint="@string/date"
             android:paddingTop="5dp"
             android:paddingBottom="5dp"
-            android:text="@{currentViewModel.dateStr}"
+            android:text="@{showViewModel.dateStr}"
             android:textAlignment="viewEnd"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

@@ -10,7 +10,7 @@ import androidx.viewpager2.widget.ViewPager2
 import ru.dariamikhailukova.task7.R
 import ru.dariamikhailukova.task7.data.Note
 import ru.dariamikhailukova.task7.databinding.ActivityViewPagerBinding
-import ru.dariamikhailukova.task7.mvvm.view.current.CurrentFragment
+import ru.dariamikhailukova.task7.mvvm.view.show.ShowFragment
 import ru.dariamikhailukova.task7.mvvm.viewModel.viewPager.ViewPagerModel
 import ru.dariamikhailukova.task7.viewModelFactory.MyViewModelFactory
 import ru.dariamikhailukova.task7.viewModelFactory.ViewModelTypes
@@ -19,7 +19,7 @@ import ru.dariamikhailukova.task7.viewModelFactory.ViewModelTypes
 /**
  * View класс для работы с activity_view_pager
  */
-class ViewPager : AppCompatActivity() {
+class ViewPagerFragment : AppCompatActivity() {
     private lateinit var binding: ActivityViewPagerBinding
     private lateinit var mViewPagerModel: ViewPagerModel
     private lateinit var adapter: ViewPagerAdapter
@@ -36,12 +36,14 @@ class ViewPager : AppCompatActivity() {
         adapter = ViewPagerAdapter(this)
         binding.viewPager.adapter = adapter
 
-        val viewPagerModelFactory = MyViewModelFactory(application, ViewModelTypes.VIEW_PAGER)
+        val viewPagerModelFactory = MyViewModelFactory(ViewModelTypes.VIEW_PAGER)
         mViewPagerModel = ViewModelProvider(this, viewPagerModelFactory).get(ViewPagerModel::class.java)
 
         setSupportActionBar(findViewById(R.id.myToolbar))
-        supportActionBar?.setDisplayHomeAsUpEnabled(true)
-        supportActionBar?.setDisplayShowHomeEnabled(true)
+        supportActionBar?.apply {
+            setDisplayHomeAsUpEnabled(true)
+            setDisplayShowHomeEnabled(true)
+        }
 
 
         var currentItem: Int
@@ -72,7 +74,7 @@ class ViewPager : AppCompatActivity() {
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        val myFragment: CurrentFragment = binding.viewPager.findCurrentFragment(supportFragmentManager) as CurrentFragment
+        val myFragment: ShowFragment = binding.viewPager.findCurrentFragment(supportFragmentManager) as ShowFragment
 
         if (item.itemId == R.id.menu_delete) {
             myFragment.deleteNote()

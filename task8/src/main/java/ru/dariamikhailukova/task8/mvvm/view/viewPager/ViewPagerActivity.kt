@@ -12,13 +12,13 @@ import ru.dariamikhailukova.task8.data.Note
 import ru.dariamikhailukova.task8.databinding.ActivityViewPagerBinding
 import ru.dariamikhailukova.task8.factory.MyViewModelFactory
 import ru.dariamikhailukova.task8.factory.ViewModelTypes
-import ru.dariamikhailukova.task8.mvvm.view.current.CurrentFragment
+import ru.dariamikhailukova.task8.mvvm.view.show.ShowFragment
 import ru.dariamikhailukova.task8.mvvm.viewModel.viewPager.ViewPagerModel
 
 /**
  * View класс для работы с activity_view_pager
  */
-class ViewPager : AppCompatActivity() {
+class ViewPagerActivity : AppCompatActivity() {
     private lateinit var binding: ActivityViewPagerBinding
     private lateinit var mViewPagerModel: ViewPagerModel
     private lateinit var adapter: ViewPagerAdapter
@@ -27,19 +27,17 @@ class ViewPager : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityViewPagerBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
-        initView()
-    }
-
-    private fun initView(){
         adapter = ViewPagerAdapter(this)
 
-        val viewPagerModelFactory = MyViewModelFactory(application, ViewModelTypes.VIEW_PAGER)
+        val viewPagerModelFactory = MyViewModelFactory(ViewModelTypes.VIEW_PAGER)
         mViewPagerModel = ViewModelProvider(this, viewPagerModelFactory).get(ViewPagerModel::class.java)
 
         setSupportActionBar(findViewById(R.id.myToolbar))
-        supportActionBar?.setDisplayHomeAsUpEnabled(true)
-        supportActionBar?.setDisplayShowHomeEnabled(true)
+
+        supportActionBar?.apply {
+            setDisplayHomeAsUpEnabled(true)
+            setDisplayShowHomeEnabled(true)
+        }
 
         var currentItem: Int
         mViewPagerModel.readAllData.observe(this, { note ->
@@ -48,7 +46,6 @@ class ViewPager : AppCompatActivity() {
             binding.viewPager.adapter = adapter
             binding.viewPager.setCurrentItem(currentItem, false)
         })
-
     }
 
     // Функция возвращает позицию заметки с ключом id в списке note
@@ -61,15 +58,8 @@ class ViewPager : AppCompatActivity() {
         return true
     }
 
-    /**
-     * @return фрагмент, который в данный момент открыт в [fragmentManager]
-     */
-    private fun ViewPager2.findCurrentFragment(fragmentManager: FragmentManager): Fragment? {
-        return fragmentManager.findFragmentByTag("f$currentItem")
-    }
-
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        val myFragment: CurrentFragment = binding.viewPager.findCurrentFragment(supportFragmentManager) as CurrentFragment
+        val myFragment = supportFragmentManager.findFragmentByTag("f" + binding.viewPager.currentItem) as ShowFragment
 
         if (item.itemId == R.id.menu_delete) {
             myFragment.deleteNote()

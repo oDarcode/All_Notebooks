@@ -1,4 +1,4 @@
-package ru.dariamikhailukova.task8.mvvm.viewModel.current
+package ru.dariamikhailukova.task8.mvvm.viewModel.show
 
 import android.util.Log
 import androidx.lifecycle.*
@@ -17,7 +17,7 @@ import java.util.*
  *
  * @property repository абстракция через которую осуществляется доступ к базе данных
  */
-class CurrentViewModel(private val repository: NoteRepository): ViewModel() {
+class ShowViewModel(private val repository: NoteRepository): ViewModel() {
 
     var id = MutableLiveData<Long>()
     var name = MutableLiveData<String>()
@@ -99,7 +99,6 @@ class CurrentViewModel(private val repository: NoteRepository): ViewModel() {
      */
     private fun inputCheck(): Boolean{
         return !(name.value.isNullOrBlank() || text.value.isNullOrBlank())
-        //return !(TextUtils.isEmpty(name.value) || TextUtils.isEmpty(text.value))
     }
 
     /**
@@ -111,10 +110,6 @@ class CurrentViewModel(private val repository: NoteRepository): ViewModel() {
         return  (timeFormat.format(date.value!!) + "  " + dateFormat.format(date.value!!))
     }
 
-    companion object{
-        const val TAG = "CurrentViewModel"
-    }
-
     /**
      * @return данные, содержащие название и текст заметки
      */
@@ -123,6 +118,10 @@ class CurrentViewModel(private val repository: NoteRepository): ViewModel() {
             .putString("name", name.value)
             .putString("text", text.value)
             .build()
+    }
+
+    companion object{
+        const val TAG = "CurrentViewModel"
     }
 
 }

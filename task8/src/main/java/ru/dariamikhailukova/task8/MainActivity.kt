@@ -9,6 +9,8 @@ import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.work.Data
 import androidx.work.OneTimeWorkRequest
 import androidx.work.WorkManager
+import ru.dariamikhailukova.task8.data.NoteDatabase
+import ru.dariamikhailukova.task8.data.NoteRepository
 import ru.dariamikhailukova.task8.databinding.ActivityMainBinding
 import ru.dariamikhailukova.task8.workManager.MyWorker
 
@@ -23,6 +25,10 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        val noteDao = NoteDatabase.getDatabase(this).noteDao()
+        repository = NoteRepository(noteDao)
+
+
         setSupportActionBar(findViewById(R.id.myToolbar))
 
         val navHostFragment = supportFragmentManager.findFragmentById(R.id.fragment) as NavHostFragment
@@ -36,5 +42,8 @@ class MainActivity : AppCompatActivity() {
         return navController.navigateUp() || super.onSupportNavigateUp()
     }
 
+    companion object {
+        lateinit var repository: NoteRepository
+    }
 
 }
