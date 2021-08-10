@@ -25,11 +25,6 @@ class ListFragment : Fragment(), ListView {
     private lateinit var viewModel: NoteViewModel
     private val adapter: ListAdapter by lazy { ListAdapter() }
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
-
-    }
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -78,9 +73,6 @@ class ListFragment : Fragment(), ListView {
             deleteAllNotes()
         }
 
-        if(item.itemId == R.id.menu_about){
-            Toast.makeText(requireContext(), "ALL OF YOU IS GODS", Toast.LENGTH_SHORT).show()
-        }
         return super.onOptionsItemSelected(item)
     }
 
@@ -105,71 +97,5 @@ class ListFragment : Fragment(), ListView {
     override fun showToast(text: Int) {
         Toast.makeText(requireContext(), text, Toast.LENGTH_SHORT).show()
     }
-
-
-    override fun onAttach(context: Context) {
-        super.onAttach(context)
-        Log.d("CALLBACK", "onAttach")
-    }
-
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-        Log.d("CALLBACK", "onActivityCreated")
-    }
-
-    override fun onStart() {
-        super.onStart()
-        Log.d("CALLBACK", "onStart")
-    }
-
-
-    override fun onResume() {
-        super.onResume()
-        Log.d("CALLBACK", "onResume")
-        //binding.recyclerView.adapter = adapter
-    }
-
-    override fun onPause() {
-        super.onPause()
-        Log.d("CALLBACK", "onPause")
-
-    }
-    override fun onStop() {
-        super.onStop()
-        Log.d("CALLBACK", "onStop")
-
-    }
-
-    override fun onDestroyView() {
-
-        Log.d("CALLBACK", "onDestroyView")
-        binding.recyclerView.layoutManager = LinearLayoutManager(requireContext())
-        binding.recyclerView.adapter = adapter
-
-        presenter!!.getAllData().observe(viewLifecycleOwner, { note ->
-            adapter.setData(note)
-        })
-
-        //if (binding.recyclerView.adapter != null){
-        Log.d("ISNT WORK", binding.recyclerView.adapter.toString())
-        //}
-
-        super.onDestroyView()
-        Log.d("ISNT WORK", binding.recyclerView.adapter.toString())
-    }
-
-    override fun onDestroy() {
-        super.onDestroy()
-        Log.d("CALLBACK", "onDestroy")
-
-
-    }
-
-    override fun onDetach() {
-        super.onDetach()
-        Log.d("CALLBACK", "onDetach")
-    }
-
-
 
 }

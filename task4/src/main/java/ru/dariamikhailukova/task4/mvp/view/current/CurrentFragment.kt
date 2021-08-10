@@ -117,7 +117,7 @@ class CurrentFragment : Fragment(), CurrentView {
      * Функция, которая осуществляет переход из фрагмента Show к фрагменту List
      */
     override fun returnToList() {
-        findNavController().navigate(R.id.action_viewPagerFragment_to_listFragment)
+        activity?.onBackPressed()
     }
 
     /**

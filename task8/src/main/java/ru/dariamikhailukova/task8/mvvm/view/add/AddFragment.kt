@@ -56,7 +56,7 @@ class AddFragment : Fragment(), AddView{
 
         mAddViewModel.onSaveSuccess.observe(this){
             Toast.makeText(requireContext(), R.string.successfully, Toast.LENGTH_SHORT).show()
-            findNavController().navigate(R.id.action_addFragment_to_listFragment)
+            activity?.onBackPressed()
         }
     }
 

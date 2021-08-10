@@ -1,3 +1,11 @@
 <resources>
-    <string name="app_name">All Notebooks</string>
+    <string name="app_name" translatable="false">All Notebooks</string>
+    <string name="task_1" translatable="false">Task 1</string>
+    <string name="task_2" translatable="false">Task 2</string>
+    <string name="task_3" translatable="false">Task 3</string>
+    <string name="task_4" translatable="false">Task 4</string>
+    <string name="task_5" translatable="false">Task 5</string>
+    <string name="task_6" translatable="false">Task 6</string>
+    <string name="task_7" translatable="false">Task 7</string>
+    <string name="task_8" translatable="false">Task 8</string>
 </resources>

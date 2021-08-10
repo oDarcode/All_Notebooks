@@ -135,7 +135,7 @@ class ShowFragment : Fragment(), ShowView {
      * Функция, которая осуществляет переход из фрагмента Show к фрагменту List
      */
     override fun returnToList() {
-        findNavController().navigate(R.id.action_showFragment_to_listFragment)
+        activity?.onBackPressed()
     }
 
     /**

@@ -6,13 +6,91 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
+    <Button
+        android:id="@+id/button_task1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
+        android:text="@string/task_1"
+        app:layout_constraintBottom_toTopOf="@+id/button_task3"
+        app:layout_constraintEnd_toStartOf="@+id/button_task2"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <Button
+        android:id="@+id/button_task2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/task_2"
+        app:layout_constraintBottom_toTopOf="@+id/button_task4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/button_task1"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/button_task3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/task_3"
+        app:layout_constraintBottom_toTopOf="@+id/button_task5"
+        app:layout_constraintEnd_toStartOf="@+id/button_task4"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button_task1" />
+
+    <Button
+        android:id="@+id/button_task4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/task_4"
+        app:layout_constraintBottom_toTopOf="@+id/button_task6"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/button_task3"
+        app:layout_constraintTop_toBottomOf="@+id/button_task2" />
+
+    <Button
+        android:id="@+id/button_task5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/task_5"
+        app:layout_constraintBottom_toTopOf="@+id/button_task7"
+        app:layout_constraintEnd_toStartOf="@+id/button_task6"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button_task3" />
+
+    <Button
+        android:id="@+id/button_task6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/task_6"
+        app:layout_constraintBottom_toTopOf="@+id/button_task8"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/button_task5"
+        app:layout_constraintTop_toBottomOf="@+id/button_task4" />
+
+    <Button
+        android:id="@+id/button_task7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/task_7"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/button_task8"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button_task5" />
+
+    <Button
+        android:id="@+id/button_task8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/task_8"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/button_task7"
+        app:layout_constraintTop_toBottomOf="@+id/button_task6" />
 </androidx.constraintlayout.widget.ConstraintLayout>

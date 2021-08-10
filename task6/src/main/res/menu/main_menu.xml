@@ -5,11 +5,6 @@
     <item android:id="@+id/menu_delete"
         android:title="@string/deleteAll"
         android:icon="@drawable/ic_baseline_delete_24"
-        app:showAsAction="never"/>
-
-    <item
-        android:title="@string/about"
-        android:icon="@drawable/ic_baseline_info_24"
-        app:showAsAction="never"/>
+        app:showAsAction="ifRoom"/>
 
 </menu>

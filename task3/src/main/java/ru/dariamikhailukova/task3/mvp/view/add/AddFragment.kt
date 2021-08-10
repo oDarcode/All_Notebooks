@@ -59,7 +59,7 @@ class AddFragment : Fragment(), AddView {
      * Функция, которая осуществляет переход из фрагмента Add к фрагменту List
      */
     override fun returnToList() {
-        findNavController().navigate(R.id.action_addFragment_to_listFragment)
+        activity?.onBackPressed()
     }
 
     /**
