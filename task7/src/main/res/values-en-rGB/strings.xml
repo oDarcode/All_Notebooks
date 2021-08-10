@@ -23,4 +23,5 @@
     <string name="search">Search</string>
     <string name="backup">Backup</string>
     <string name="deleteAll">Delete all</string>
+    <string name="add">Add</string>
 </resources>

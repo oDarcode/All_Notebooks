@@ -40,7 +40,6 @@ class ListFragment : Fragment(), ListView {
 
 
         binding.recyclerView.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL, false)
-        //binding.recyclerView.layoutManager.setOrientation(LinearLayoutManager.VERTICAL)
         binding.recyclerView.adapter = adapter
 
         presenter!!.getAllData().observe(viewLifecycleOwner, { note ->

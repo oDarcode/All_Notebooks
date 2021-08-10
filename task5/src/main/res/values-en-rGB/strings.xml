@@ -20,4 +20,5 @@
     <string name="are_you_sure">Are you sure?</string>
     <string name="delete_everything">Delete everything?</string>
     <string name="deleteAll">Delete all</string>
+    <string name="add">Add</string>
 </resources>

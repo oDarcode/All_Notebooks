@@ -6,7 +6,7 @@
     <fragment
         android:id="@+id/listFragment"
         android:name="ru.dariamikhailukova.task3.mvp.view.list.ListFragment"
-        android:label="task3">
+        android:label="@string/app_name">
         <action
             android:id="@+id/action_listFragment_to_showFragment"
             app:destination="@id/showFragment" />
@@ -17,7 +17,7 @@
     <fragment
         android:id="@+id/showFragment"
         android:name="ru.dariamikhailukova.task3.mvp.view.show.ShowFragment"
-        android:label="Note">
+        android:label="@string/note">
         <action
             android:id="@+id/action_showFragment_to_listFragment"
             app:destination="@id/listFragment" />
@@ -28,7 +28,7 @@
     <fragment
         android:id="@+id/addFragment"
         android:name="ru.dariamikhailukova.task3.mvp.view.add.AddFragment"
-        android:label="Add">
+        android:label="@string/add">
         <action
             android:id="@+id/action_addFragment_to_listFragment"
             app:destination="@id/listFragment" />

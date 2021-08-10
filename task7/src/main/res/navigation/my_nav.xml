@@ -6,7 +6,7 @@
     <fragment
         android:id="@+id/listFragment"
         android:name="ru.dariamikhailukova.task7.mvvm.view.list.ListFragment"
-        android:label="task7">
+        android:label="@string/app_name">
         <action
             android:id="@+id/action_listFragment_to_addFragment"
             app:destination="@id/addFragment" />
@@ -14,7 +14,7 @@
     <fragment
         android:id="@+id/addFragment"
         android:name="ru.dariamikhailukova.task7.mvvm.view.add.AddFragment"
-        android:label="AddFragment" >
+        android:label="@string/add">
         <action
             android:id="@+id/action_addFragment_to_listFragment"
             app:destination="@id/listFragment" />

@@ -23,5 +23,6 @@
     <string name="no">Нет</string>
     <string name="download">Скачать</string>
     <string name="deleteAll">Удалить все</string>
+    <string name="add">Добавить</string>
 
 </resources>
